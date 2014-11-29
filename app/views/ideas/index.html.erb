@@ -1,0 +1,20 @@
+<h1>Your Ideas</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body" align="center" >
+          <%= link_to image_tag("4T9zBpp8c.png"), new_idea_url, width: "50%" %>
+        </div>
+      </div>
+    </div>
+    <% @ideas.each do |idea| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body"  align="center" >
+            <%= image_tag idea.picture_url, width: "50%" if idea.picture.present?%>
+            <h4><%= link_to idea.name, idea %></h4>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
